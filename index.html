@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[WTCTW][D11 Campaign] eLab 2026 D11 Campaign Arrangement (JIRA#WTCTW-3783)</title>
+  <title>[WTCTW][D11 Campaign] eLab D11 Campaign Arrangement (JIRA#WTCTW-3783)</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono, Nunito -->
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Nunito:wght@800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -20,40 +20,25 @@
           colors: {
             watsons: {
               teal: '#009990',
+              primary: '#009DA5',
               darkTeal: '#007A73',
+              deep: '#005F66',
+              mint: '#F0FDFA',
+              softTeal: '#E6F7F8',
+              borderTeal: '#D5ECEE',
+              badgeTeal: '#CCFBF1',
               red: '#E61E2A',
-            },
-            macaron: {
-              cream: '#FFFDF9',
-              mintBg: '#D8F3DC',
-              mintAccent: '#52B788',
-              mintText: '#1B4332',
-              roseBg: '#FFE5EC',
-              roseAccent: '#FF8FAB',
-              roseText: '#800F2F',
-              lavenderBg: '#EDE0FE',
-              lavenderAccent: '#9D4EDD',
-              lavenderText: '#3C096C',
-              lemonBg: '#FFF3B0',
-              lemonAccent: '#F4A261',
-              lemonText: '#7F4F24',
-              skyBg: '#DCEEFB',
-              skyAccent: '#48CAE4',
-              skyText: '#023E8A',
-              peachBg: '#FFD8BE',
-              peachAccent: '#F77F00',
-              peachText: '#7F2B00'
+              redLight: '#FEF2F2'
             }
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Inter', 'Microsoft JhengHei', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Cascadia Code', 'Consolas', 'monospace'],
-            rounded: ['Nunito', 'Plus Jakarta Sans', 'sans-serif']
+            sans: ['Plus Jakarta Sans', 'Inter', 'PingFang TC', 'Microsoft JhengHei', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Cascadia Code', 'Consolas', 'monospace']
           },
           boxShadow: {
-            'macaron': '0 12px 28px -6px rgba(157, 78, 221, 0.08), 0 6px 14px -4px rgba(255, 143, 171, 0.07), inset 0 2px 0 0 rgba(255, 255, 255, 0.9)',
-            'macaron-hover': '0 20px 34px -8px rgba(157, 78, 221, 0.14), 0 10px 18px -6px rgba(255, 143, 171, 0.12), inset 0 2px 0 0 rgba(255, 255, 255, 1)',
-            'pill': '0 4px 12px rgba(244, 162, 97, 0.2), inset 0 1px 0 rgba(255,255,255,0.8)'
+            'corporate': '0 4px 20px -2px rgba(0, 153, 144, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04)',
+            'corporate-hover': '0 12px 28px -4px rgba(0, 153, 144, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06)',
+            'pill': '0 2px 8px rgba(0, 153, 144, 0.14)'
           }
         }
       }
@@ -62,13 +47,15 @@
 
   <style>
     body {
-      background: linear-gradient(135deg, #FFFDF9 0%, #FFF5F8 35%, #F5F0FF 70%, #F0FBF7 100%);
+      background-color: #F4F9F9;
+      background-image: radial-gradient(circle at 15% 0%, rgba(204, 251, 241, 0.45) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 100%, rgba(230, 247, 248, 0.6) 0%, transparent 50%);
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Animated Pastel Radar Pulse for In-Progress Badges */
+    /* Animated Teal Radar Pulse for In-Progress Badges */
     @keyframes radar-ping {
       0% {
         transform: scale(1);
@@ -83,59 +70,54 @@
       animation: radar-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
-    /* Candy-Striped Progress Bar Animation */
-    @keyframes macaron-stripes {
+    /* Subtle Watsons Teal Progress Bar Stripes */
+    @keyframes teal-stripes {
       from { background-position: 1.25rem 0; }
       to { background-position: 0 0; }
     }
-    .bg-macaron-stripes {
+    .bg-teal-stripes {
       background-image: linear-gradient(
         45deg,
-        rgba(255, 255, 255, 0.35) 25%,
+        rgba(255, 255, 255, 0.22) 25%,
         transparent 25%,
         transparent 50%,
-        rgba(255, 255, 255, 0.35) 50%,
-        rgba(255, 255, 255, 0.35) 75%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0.22) 75%,
         transparent 75%,
         transparent
       );
       background-size: 1.25rem 1.25rem;
-      animation: macaron-stripes 1.1s linear infinite;
+      animation: teal-stripes 1.2s linear infinite;
     }
 
-    /* Soft Custom Scrollbar */
+    /* Crisp Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #FFFDF9;
+      background: #F4F9F9;
     }
     ::-webkit-scrollbar-thumb {
-      background: #FF8FAB;
+      background: #009990;
       border-radius: 9999px;
     }
   </style>
 </head>
-<body class="text-slate-800 antialiased selection:bg-macaron-roseAccent selection:text-white pb-16">
+<body class="text-slate-800 antialiased selection:bg-watsons-teal selection:text-white pb-16">
 
-  <!-- Decorative Floating Macaron Pastel Blobs -->
-  <div class="fixed -top-24 -left-24 w-96 h-96 rounded-full bg-[#FFE5EC]/60 blur-3xl pointer-events-none -z-10"></div>
-  <div class="fixed top-1/3 -right-24 w-96 h-96 rounded-full bg-[#EDE0FE]/60 blur-3xl pointer-events-none -z-10"></div>
-  <div class="fixed -bottom-24 left-1/3 w-96 h-96 rounded-full bg-[#D8F3DC]/60 blur-3xl pointer-events-none -z-10"></div>
-
-  <!-- Top Macaron Rainbow Ribbon -->
-  <div class="h-2 w-full bg-gradient-to-r from-[#52B788] via-[#FF8FAB] via-[#9D4EDD] via-[#F4A261] to-[#48CAE4]"></div>
+  <!-- Top Corporate Watsons Teal & Signature Red Accent Bar -->
+  <div class="h-1.5 w-full bg-gradient-to-r from-[#005F66] via-[#009990] to-[#E61E2A]"></div>
 
   <!-- Sticky Navigation Header -->
-  <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#FFFDF9]/85 border-b border-pink-200/60 shadow-sm">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/95 border-b border-[#D5ECEE] shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
       
       <!-- Left: Crisp Inline SVG Recreation of the Watsons Logo + Campaign Tags & Subject -->
       <div class="flex items-center gap-4 sm:gap-5">
         <!-- Uploaded Watsons Logo Vector Recreation -->
-        <a href="#" class="group focus:outline-none shrink-0" title="Watsons eLab 2026 D11 Campaign">
-          <svg class="h-11 sm:h-13 w-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.03]" viewBox="0 0 560 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Watsons Logo">
+        <a href="#" class="group focus:outline-none shrink-0" title="Watsons eLab D11 Campaign">
+          <svg class="h-11 sm:h-12 w-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.02]" viewBox="0 0 560 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Watsons Logo">
             <defs>
               <clipPath id="watsons-pill-clip">
                 <path d="M 88 4 H 548 C 553.5 4 556 6.5 556 12 V 62 C 556 105.08 521.08 136 478 136 H 12 C 6.5 136 4 133.5 4 128 V 88 C 4 41.61 41.61 4 88 4 Z" />
@@ -163,26 +145,26 @@
           </svg>
         </a>
 
-        <div class="border-l-2 border-pink-200 pl-3.5 sm:pl-5">
-          <!-- Pastel Macaron Tag Pills -->
+        <div class="border-l-2 border-[#D5ECEE] pl-3.5 sm:pl-5">
+          <!-- Clean Watsons Corporate Tag Pills -->
           <div class="flex flex-wrap items-center gap-1.5">
-            <span class="px-2.5 py-0.5 text-[11px] font-extrabold rounded-full bg-[#D8F3DC] text-[#1B4332] border border-[#52B788]/40">
+            <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-md bg-[#F0FDFA] text-[#005F66] border border-[#009990]/30">
               [WTCTW]
             </span>
-            <span class="px-2.5 py-0.5 text-[11px] font-extrabold rounded-full bg-[#FFE5EC] text-[#800F2F] border border-[#FF8FAB]/40">
-              [2026 D11 Campaign]
+            <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-md bg-[#E6F7F8] text-[#007A73] border border-[#009DA5]/30">
+              [D11 Campaign]
             </span>
-            <span class="px-2.5 py-0.5 text-[11px] font-extrabold rounded-full bg-[#DCEEFB] text-[#023E8A] border border-[#48CAE4]/40">
-              eLab
+            <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-md bg-slate-100 text-slate-700 border border-slate-300">
+              eLab E2 System
             </span>
-            <span class="px-2.5 py-0.5 text-[11px] font-mono font-bold rounded-full bg-[#EDE0FE] text-[#3C096C] border border-[#9D4EDD]/40 flex items-center gap-1">
-              <i data-lucide="ticket" class="w-3 h-3"></i>
+            <span class="px-2.5 py-0.5 text-[11px] font-mono font-bold rounded-md bg-[#CCFBF1]/70 text-[#005F66] border border-[#009990]/40 flex items-center gap-1">
+              <i data-lucide="ticket" class="w-3 h-3 text-[#009990]"></i>
               JIRA#WTCTW-3783
             </span>
           </div>
           <!-- Requested Main Subject Title -->
-          <h1 class="text-sm sm:text-lg font-extrabold text-slate-800 tracking-tight mt-1">
-            <span data-i18n="header_title">[WTCTW][2026 D11 Campaign] eLab 2026 D11 Campaign Arrangement</span> <span class="font-mono text-[#9D4EDD]">(JIRA#WTCTW-3783)</span>
+          <h1 class="text-sm sm:text-lg font-extrabold text-slate-900 tracking-tight mt-1">
+            <span data-i18n="header_title">[WTCTW][D11 Campaign] eLab D11 Campaign Arrangement</span> <span class="font-mono text-[#007A73]">(JIRA#WTCTW-3783)</span>
           </h1>
         </div>
       </div>
@@ -193,36 +175,36 @@
         <button
           id="lang-toggle-btn"
           onclick="toggleLanguage()"
-          class="group relative inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-gradient-to-r from-[#D8F3DC] via-[#EDE0FE] to-[#FFE5EC] hover:from-[#FFE5EC] hover:to-[#D8F3DC] border-2 border-white shadow-macaron transition-all active:scale-95 cursor-pointer"
+          class="group relative inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#F0FDFA] hover:bg-[#CCFBF1]/70 border border-[#009990]/35 shadow-sm transition-all active:scale-95 cursor-pointer"
           title="切換中文 / Switch to English"
         >
-          <span class="w-7 h-7 rounded-xl bg-white/90 text-[#3C096C] flex items-center justify-center shadow-sm font-extrabold text-xs">
-            🌐
+          <span class="w-7 h-7 rounded-lg bg-[#009990] text-white flex items-center justify-center shadow-sm font-bold text-xs">
+            <i data-lucide="globe" class="w-4 h-4"></i>
           </span>
-          <div class="text-left pr-1">
-            <div class="text-[10px] font-extrabold uppercase tracking-wider text-[#3C096C]/70 leading-none" data-i18n="lang_label">Language / 語言</div>
-            <div class="text-xs sm:text-sm font-extrabold text-[#3C096C] tracking-tight flex items-center gap-1 mt-0.5">
-              <span id="lang-pill-en" class="px-1.5 py-0.2 rounded bg-[#9D4EDD] text-white text-[11px]">EN</span>
+          <div class="text-left pr-0.5">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-[#005F66]/75 leading-none" data-i18n="lang_label">Language / 語言</div>
+            <div class="text-xs font-extrabold text-[#005F66] tracking-tight flex items-center gap-1 mt-0.5">
+              <span id="lang-pill-en" class="px-1.5 py-0.5 rounded bg-[#009990] text-white text-[11px]">EN</span>
               <span class="text-slate-400">/</span>
-              <span id="lang-pill-zh" class="px-1.5 py-0.2 rounded text-[#3C096C] text-[11px]">繁體中文</span>
+              <span id="lang-pill-zh" class="px-1.5 py-0.5 rounded text-[#005F66] text-[11px]">繁體中文</span>
             </div>
           </div>
         </button>
 
-        <!-- Global Master Status Badge (Lemon Buttercream Macaron) -->
-        <div id="global-status-pill" class="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#FFF3B0] border-2 border-[#F4A261]/60 shadow-pill">
+        <!-- Global Master Status Badge (Refreshing Watsons Mint Teal) -->
+        <div id="global-status-pill" class="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#F0FDFA] border border-[#009990]/40 shadow-pill">
           <span class="relative flex h-3 w-3">
-            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#E76F51]"></span>
+            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#007A73]"></span>
           </span>
           <div class="text-left">
-            <div class="text-[10px] font-bold uppercase tracking-wider text-[#7F4F24]/80 leading-none" data-i18n="master_progress_title">Master Progress</div>
-            <div id="global-status-text" class="text-xs sm:text-sm font-extrabold text-[#7F4F24] tracking-tight">ALL 5 TRACKS: IN-PROGRESS</div>
+            <div class="text-[10px] font-bold uppercase tracking-wider text-[#005F66]/75 leading-none" data-i18n="master_progress_title">Master Progress</div>
+            <div id="global-status-text" class="text-xs sm:text-sm font-extrabold text-[#005F66] tracking-tight">ALL 5 TRACKS: IN-PROGRESS</div>
           </div>
         </div>
 
         <!-- Copy Official D11 Announcement Notice Button -->
-        <button onclick="openEmailModal()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-[#FF8FAB] to-[#9D4EDD] hover:opacity-95 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95">
+        <button onclick="openEmailModal()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#009990] hover:bg-[#007A73] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow transition-all active:scale-95">
           <i data-lucide="mail-check" class="w-4 h-4"></i>
           <span data-i18n="btn_copy_notice">Copy JIRA / Email Notice</span>
         </button>
@@ -232,111 +214,111 @@
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-7">
 
-    <!-- Hero Banner: Macaron Pastel Claymorphism Executive Card -->
-    <section class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#FFE5EC] via-[#EDE0FE] to-[#DCEEFB] p-6 sm:p-8 shadow-macaron border-2 border-white">
-      <!-- Soft inner decorative circles -->
-      <div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-[#FFF3B0]/60 blur-2xl pointer-events-none"></div>
-      <div class="absolute left-1/3 -bottom-16 w-64 h-64 rounded-full bg-[#D8F3DC]/70 blur-2xl pointer-events-none"></div>
+    <!-- Hero Banner: Refreshing & Professional Watsons Teal Executive Card -->
+    <section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#005F66] via-[#007A73] to-[#009990] p-6 sm:p-8 shadow-corporate border border-[#009990]/30 text-white">
+      <!-- Subtle geometric corporate pattern overlay -->
+      <div class="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
+      <div class="absolute left-1/3 -bottom-20 w-80 h-80 rounded-full bg-[#CCFBF1]/10 blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         <!-- Left 7 Cols: Campaign Subject, Reminder & Interactive Progress Bar -->
         <div class="lg:col-span-7 space-y-4">
-          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur border border-[#FF8FAB]/50 text-[#800F2F] text-xs font-extrabold shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-[#FF8FAB] animate-ping"></span>
+          <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#CCFBF1] text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-[#5EEAD4] animate-ping"></span>
             <span data-i18n="hero_status_tag">STATUS: IN-PROGRESS</span>
-            <span class="text-slate-300">|</span>
-            <span class="font-mono text-[#3C096C]">JIRA#WTCTW-3783</span>
+            <span class="text-white/40">|</span>
+            <span class="font-mono text-white">JIRA#WTCTW-3783</span>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            [WTCTW][2026 D11 Campaign] <span class="bg-gradient-to-r from-[#800F2F] via-[#3C096C] to-[#009990] bg-clip-text text-transparent" data-i18n="hero_main_heading">eLab 2026 D11 Campaign Arrangement</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            [WTCTW][D11 Campaign] <span class="text-[#99F6E4]" data-i18n="hero_main_heading">eLab D11 Campaign Arrangement</span>
           </h2>
 
-          <p class="text-slate-700 text-sm sm:text-base max-w-2xl leading-relaxed font-medium bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/80" data-i18n="hero_desc">
-            As the 2026 D11 campaign is approaching, please be reminded of the below arrangements aiming to ensure the stability of the <strong>E2 system</strong> during the period. Currently, all 5 core tracks and deliverables are actively <strong>In-Progress</strong>.
+          <p class="text-teal-50 text-sm sm:text-base max-w-2xl leading-relaxed font-normal bg-black/15 backdrop-blur-sm rounded-xl p-4 border border-white/15" data-i18n="hero_desc">
+            As the D11 campaign is approaching, please be reminded of the below arrangements aiming to ensure the stability of the <strong>E2 system</strong> during the period. Currently, all 5 core tracks and deliverables are actively <strong>In-Progress</strong>.
           </p>
 
           <!-- Interactive Readiness Progress Bar -->
-          <div class="pt-1 max-w-xl bg-white/75 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm">
+          <div class="pt-1 max-w-xl bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
             <div class="flex justify-between items-end mb-2">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-[#3C096C] flex items-center gap-1.5">
-                <i data-lucide="sparkles" class="w-4 h-4 text-[#9D4EDD]"></i>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#CCFBF1] flex items-center gap-1.5">
+                <i data-lucide="activity" class="w-4 h-4 text-[#5EEAD4]"></i>
                 <span data-i18n="hero_tracker_label">eLab E2 System Readiness Tracker</span>
               </span>
-              <span id="overall-progress-label" class="text-xs sm:text-sm font-mono font-extrabold text-[#800F2F] bg-[#FFE5EC] px-2.5 py-0.5 rounded-full border border-[#FF8FAB]/40">
+              <span id="overall-progress-label" class="text-xs font-mono font-bold text-[#005F66] bg-[#CCFBF1] px-2.5 py-0.5 rounded-full">
                 100% IN-PROGRESS (5/5 Active)
               </span>
             </div>
-            <div class="w-full h-3.5 bg-[#FFFDF9] rounded-full overflow-hidden p-0.5 border border-pink-200 shadow-inner">
-              <div id="overall-progress-bar" class="h-full rounded-full bg-gradient-to-r from-[#52B788] via-[#F4A261] via-[#FF8FAB] to-[#9D4EDD] bg-macaron-stripes transition-all duration-500" style="width: 100%"></div>
+            <div class="w-full h-3 bg-black/25 rounded-full overflow-hidden p-0.5 border border-white/15">
+              <div id="overall-progress-bar" class="h-full rounded-full bg-gradient-to-r from-[#2DD4BF] via-[#5EEAD4] to-[#99F6E4] bg-teal-stripes transition-all duration-500" style="width: 100%"></div>
             </div>
           </div>
         </div>
 
-        <!-- Right 5 Cols: 4 Macaron Flavor Milestone Summary Cards -->
+        <!-- Right 5 Cols: 4 Crisp Corporate Milestone KPI Cards -->
         <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-          <!-- Card A: Peach Coral (3 Nov TA Team) -->
-          <div class="bg-[#FFD8BE]/90 backdrop-blur-md border-2 border-white rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <!-- Card A: 3 Nov TA Team (Urgent Watsons Red Accent) -->
+          <div class="bg-white text-slate-800 border-l-4 border-l-[#E61E2A] border border-white/80 rounded-xl p-4 shadow-md flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#7F2B00]" data-i18n="kpi1_tag">TA Team Action</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-white/90 text-[#7F2B00] border border-[#F77F00]/30" data-i18n="status_in_progress">IN-PROGRESS</span>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#E61E2A]" data-i18n="kpi1_tag">TA Team Action</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/30" data-i18n="status_in_progress">IN-PROGRESS</span>
             </div>
             <div class="my-2">
-              <div class="text-2xl font-mono font-extrabold text-[#7F2B00]" data-i18n="kpi1_date">03 Nov</div>
-              <div class="text-xs font-medium text-[#7F2B00]/90 mt-0.5" data-i18n="kpi1_desc">Latest date for TA Team to provide Promotion IDs</div>
+              <div class="text-2xl font-mono font-extrabold text-slate-900" data-i18n="kpi1_date">03 Nov</div>
+              <div class="text-xs font-medium text-slate-600 mt-0.5" data-i18n="kpi1_desc">Latest date for TA Team to provide Promotion IDs</div>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#7F2B00] flex items-center gap-1 bg-white/60 px-2.5 py-1 rounded-xl w-fit">
+            <div class="text-[11px] font-mono font-bold text-[#E61E2A] flex items-center gap-1 bg-[#FEF2F2] px-2.5 py-1 rounded-lg w-fit">
               <i data-lucide="clock" class="w-3.5 h-3.5"></i>
               <span id="countdown-nov3">Priority Cutoff</span>
             </div>
           </div>
 
-          <!-- Card B: Lemon Buttercream (6 Nov Flash Sales) -->
-          <div class="bg-[#FFF3B0]/90 backdrop-blur-md border-2 border-white rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <!-- Card B: 6 Nov Flash Sales -->
+          <div class="bg-white text-slate-800 border-l-4 border-l-[#009990] border border-white/80 rounded-xl p-4 shadow-md flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#7F4F24]" data-i18n="kpi2_tag">Flash Sales Import</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-white/90 text-[#7F4F24] border border-[#F4A261]/40" data-i18n="status_in_progress">IN-PROGRESS</span>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#007A73]" data-i18n="kpi2_tag">Flash Sales Import</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/30" data-i18n="status_in_progress">IN-PROGRESS</span>
             </div>
             <div class="my-2">
-              <div class="text-2xl font-mono font-extrabold text-[#7F4F24]" data-i18n="kpi2_date">06 Nov</div>
-              <div class="text-xs font-medium text-[#7F4F24]/90 mt-0.5" data-i18n="kpi2_desc">Share schedule & import Flash Sales promo</div>
+              <div class="text-2xl font-mono font-extrabold text-slate-900" data-i18n="kpi2_date">06 Nov</div>
+              <div class="text-xs font-medium text-slate-600 mt-0.5" data-i18n="kpi2_desc">Share schedule & import Flash Sales promo</div>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#7F4F24] flex items-center gap-1 bg-white/60 px-2.5 py-1 rounded-xl w-fit">
+            <div class="text-[11px] font-mono font-bold text-[#007A73] flex items-center gap-1 bg-[#F0FDFA] px-2.5 py-1 rounded-lg w-fit">
               <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
               <span data-i18n="kpi2_foot">For Verification</span>
             </div>
           </div>
 
-          <!-- Card C: Pistachio Mint (9 Nov File Loader) -->
-          <div class="bg-[#D8F3DC]/95 backdrop-blur-md border-2 border-white rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <!-- Card C: 9 Nov File Loader -->
+          <div class="bg-white text-slate-800 border-l-4 border-l-[#007A73] border border-white/80 rounded-xl p-4 shadow-md flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#1B4332]" data-i18n="kpi3_tag">Loader Cutoff</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-white/90 text-[#1B4332] border border-[#52B788]/40" data-i18n="status_in_progress">IN-PROGRESS</span>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#005F66]" data-i18n="kpi3_tag">Loader Cutoff</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/30" data-i18n="status_in_progress">IN-PROGRESS</span>
             </div>
             <div class="my-2">
-              <div class="text-xl font-mono font-extrabold text-[#1B4332]" data-i18n="kpi3_date">09 Nov <span class="text-sm">14:00</span></div>
-              <div class="text-xs font-medium text-[#1B4332]/90 mt-0.5" data-i18n="kpi3_desc">Upload files before 16:00 HKT suspension</div>
+              <div class="text-xl font-mono font-extrabold text-slate-900" data-i18n="kpi3_date">09 Nov <span class="text-sm text-[#007A73]">14:00</span></div>
+              <div class="text-xs font-medium text-slate-600 mt-0.5" data-i18n="kpi3_desc">Upload files before 16:00 HKT suspension</div>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#1B4332] flex items-center gap-1 bg-white/60 px-2.5 py-1 rounded-xl w-fit">
+            <div class="text-[11px] font-mono font-bold text-[#005F66] flex items-center gap-1 bg-[#E6F7F8] px-2.5 py-1 rounded-lg w-fit">
               <i data-lucide="hard-drive-upload" class="w-3.5 h-3.5"></i>
               <span data-i18n="kpi3_foot">6 Loader Job Types</span>
             </div>
           </div>
 
-          <!-- Card D: Sky Blueberry (11 Nov Peak Day) -->
-          <div class="bg-[#DCEEFB]/95 backdrop-blur-md border-2 border-white rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <!-- Card D: 11 Nov Peak Day -->
+          <div class="bg-white text-slate-800 border-l-4 border-l-[#005F66] border border-white/80 rounded-xl p-4 shadow-md flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#023E8A]" data-i18n="kpi4_tag">D11 Peak Lock</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-white/90 text-[#023E8A] border border-[#48CAE4]/40" data-i18n="status_in_progress">IN-PROGRESS</span>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#005F66]" data-i18n="kpi4_tag">D11 Peak Lock</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/30" data-i18n="status_in_progress">IN-PROGRESS</span>
             </div>
             <div class="my-2">
-              <div class="text-xl font-mono font-extrabold text-[#023E8A]" data-i18n="kpi4_date">11 Nov <span class="text-sm">00:00</span></div>
-              <div class="text-xs font-medium text-[#023E8A]/90 mt-0.5" data-i18n="kpi4_desc">Notify Me paused until 12 Nov 01:00 HKT</div>
+              <div class="text-xl font-mono font-extrabold text-slate-900" data-i18n="kpi4_date">11 Nov <span class="text-sm text-[#007A73]">00:00</span></div>
+              <div class="text-xs font-medium text-slate-600 mt-0.5" data-i18n="kpi4_desc">Notify Me paused until 12 Nov 01:00 HKT</div>
             </div>
-            <div class="text-[11px] font-mono font-bold text-[#023E8A] flex items-center gap-1 bg-white/60 px-2.5 py-1 rounded-xl w-fit">
-              <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            <div class="text-[11px] font-mono font-bold text-[#005F66] flex items-center gap-1 bg-[#E6F7F8] px-2.5 py-1 rounded-lg w-fit">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-[#009990]"></i>
               <span id="countdown-d11">D11 Peak Window</span>
             </div>
           </div>
@@ -344,203 +326,203 @@
       </div>
     </section>
 
-    <!-- Section 1: Macaron Chronological Milestone Timeline (HKT) -->
-    <section class="bg-white/90 backdrop-blur-md rounded-[2rem] p-6 sm:p-8 shadow-macaron border-2 border-pink-100">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-pink-100">
+    <!-- Section 1: Clean Corporate Chronological Milestone Timeline (HKT) -->
+    <section class="bg-white rounded-2xl p-6 sm:p-7 shadow-corporate border border-[#D5ECEE]">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#D5ECEE]">
         <div>
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-[#FF8FAB]"></span>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-[#800F2F]" data-i18n="tl_subtitle">Chronological Execution Roadmap • JIRA#WTCTW-3783</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#009990]"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#007A73]" data-i18n="tl_subtitle">Chronological Execution Roadmap • JIRA#WTCTW-3783</span>
           </div>
           <h3 class="text-xl font-extrabold text-slate-900 mt-1" data-i18n="tl_title">eLab D11 Critical Timeline & Freeze Windows (HKT)</h3>
         </div>
         <div class="flex items-center gap-2 text-xs font-bold">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50 shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-[#F77F00] animate-ping"></span>
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0FDFA] text-[#005F66] border border-[#009990]/30">
+            <span class="w-2 h-2 rounded-full bg-[#009990] animate-ping"></span>
             <span data-i18n="tl_badge_all">All 6 Key Milestones: In-Progress</span>
           </span>
         </div>
       </div>
 
-      <!-- 6-Step Macaron Pastel Cards -->
+      <!-- 6-Step Watsons Teal Timeline Cards -->
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-        <!-- Step 1: 3 Nov (Peach Coral) -->
-        <div class="rounded-2xl p-4 bg-[#FFD8BE]/65 border-2 border-[#F77F00]/30 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 1: 3 Nov -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#E61E2A] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2.5 py-0.5 rounded-lg bg-[#F77F00] text-white">03 NOV</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#7F2B00] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E61E2A] text-white">03 NOV</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#7F2B00]" data-i18n="tl1_title">TA Team Promo IDs</h4>
-            <p class="text-xs text-[#7F2B00]/85 mt-1 leading-relaxed" data-i18n="tl1_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl1_title">TA Team Promo IDs</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl1_desc">
               TA Team provides Flash Sales Promotion IDs by <strong>3 Nov</strong> at the latest.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#7F2B00]/10 text-[11px] font-mono font-bold text-[#7F2B00]" data-i18n="tl1_foot">Step 01 • TA Team</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl1_foot">Step 01 • TA Team</div>
         </div>
 
-        <!-- Step 2: 6 Nov (Lemon Buttercream) -->
-        <div class="rounded-2xl p-4 bg-[#FFF3B0]/70 border-2 border-[#F4A261]/40 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 2: 6 Nov -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#009990] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2.5 py-0.5 rounded-lg bg-[#F4A261] text-white">06 NOV</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#7F4F24] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#F4A261] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#009990] text-white">06 NOV</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#7F4F24]" data-i18n="tl2_title">Flash Sales Import</h4>
-            <p class="text-xs text-[#7F4F24]/90 mt-1 leading-relaxed" data-i18n="tl2_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl2_title">Flash Sales Import</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl2_desc">
               Share Flash Sales info & import promotion before <strong>6 Nov</strong> for verification.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#7F4F24]/10 text-[11px] font-mono font-bold text-[#7F4F24]" data-i18n="tl2_foot">Step 02 • BU / eLab</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl2_foot">Step 02 • BU / eLab</div>
         </div>
 
-        <!-- Step 3: 9 Nov 14:00 (Pistachio Mint) -->
-        <div class="rounded-2xl p-4 bg-[#D8F3DC]/70 border-2 border-[#52B788]/40 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 3: 9 Nov 14:00 -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#009DA5] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2 py-0.5 rounded-lg bg-[#52B788] text-white">09 NOV 14:00</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#1B4332] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#52B788] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#007A73] text-white">09 NOV 14:00</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#1B4332]" data-i18n="tl3_title">File Upload Cutoff</h4>
-            <p class="text-xs text-[#1B4332]/90 mt-1 leading-relaxed" data-i18n="tl3_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl3_title">File Upload Cutoff</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl3_desc">
               Ensure all necessary D11 files are uploaded before <strong>9 Nov 14:00 (HKT)</strong>.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#1B4332]/10 text-[11px] font-mono font-bold text-[#1B4332]" data-i18n="tl3_foot">Step 03 • Pre-Freeze</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl3_foot">Step 03 • Pre-Freeze</div>
         </div>
 
-        <!-- Step 4: 9 Nov 16:00 (Strawberry Rose) -->
-        <div class="rounded-2xl p-4 bg-[#FFE5EC]/80 border-2 border-[#FF8FAB]/50 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 4: 9 Nov 16:00 -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#007A73] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2 py-0.5 rounded-lg bg-[#FF8FAB] text-[#800F2F]">09 NOV 16:00</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#800F2F] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#FF8FAB] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#005F66] text-white">09 NOV 16:00</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#800F2F]" data-i18n="tl4_title">Loader Suspension</h4>
-            <p class="text-xs text-[#800F2F]/90 mt-1 leading-relaxed" data-i18n="tl4_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl4_title">Loader Suspension</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl4_desc">
               All file loader jobs (promotion, product, price, etc.) suspended from <strong>16:00 HKT</strong>.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#800F2F]/10 text-[11px] font-mono font-bold text-[#800F2F]" data-i18n="tl4_foot">Step 04 • E2 Freeze</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl4_foot">Step 04 • E2 Freeze</div>
         </div>
 
-        <!-- Step 5: 11 Nov 00:00 (Lavender Taro) -->
-        <div class="rounded-2xl p-4 bg-[#EDE0FE]/80 border-2 border-[#9D4EDD]/40 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 5: 11 Nov 00:00 -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#005F66] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2 py-0.5 rounded-lg bg-[#9D4EDD] text-white">11 NOV 00:00</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#3C096C] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#9D4EDD] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#005F66] text-white">11 NOV 00:00</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#3C096C]" data-i18n="tl5_title">D11 & Notify Me Pause</h4>
-            <p class="text-xs text-[#3C096C]/90 mt-1 leading-relaxed" data-i18n="tl5_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl5_title">D11 & Notify Me Pause</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl5_desc">
               "Notify Me" email trigger paused at <strong>00:00 HKT</strong>; scaled servers & support active.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#3C096C]/10 text-[11px] font-mono font-bold text-[#3C096C]" data-i18n="tl5_foot">Step 05 • Peak Day</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl5_foot">Step 05 • Peak Day</div>
         </div>
 
-        <!-- Step 6: 12 Nov 01:00 (Sky Blueberry) -->
-        <div class="rounded-2xl p-4 bg-[#DCEEFB]/80 border-2 border-[#48CAE4]/50 hover:scale-[1.02] transition-all flex flex-col justify-between">
+        <!-- Step 6: 12 Nov 01:00 -->
+        <div class="rounded-xl p-4 bg-[#F0FDFA]/60 border border-[#009990]/30 border-t-4 border-t-[#0EA5A4] hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-extrabold px-2 py-0.5 rounded-lg bg-[#023E8A] text-white">12 NOV 01:00</span>
-              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-extrabold text-[#023E8A] bg-white/80 px-2 py-0.5 rounded-full">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#48CAE4] animate-ping"></span>
+              <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#009990] text-white">12 NOV 01:00</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-[#007A73] bg-white px-2 py-0.5 rounded-full border border-[#009990]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                 <span data-i18n="status_in_progress_short">In-Progress</span>
               </span>
             </div>
-            <h4 class="font-extrabold text-sm text-[#023E8A]" data-i18n="tl6_title">Full Resumption</h4>
-            <p class="text-xs text-[#023E8A]/90 mt-1 leading-relaxed" data-i18n="tl6_desc">
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="tl6_title">Full Resumption</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed" data-i18n="tl6_desc">
               File Loader jobs and "Notify Me" email triggers resume on <strong>12 Nov 01:00 (HKT)</strong>.
             </p>
           </div>
-          <div class="mt-3 pt-2 border-t border-[#023E8A]/10 text-[11px] font-mono font-bold text-[#023E8A]" data-i18n="tl6_foot">Step 06 • Normal Ops</div>
+          <div class="mt-3 pt-2 border-t border-[#D5ECEE] text-[11px] font-mono font-bold text-[#005F66]" data-i18n="tl6_foot">Step 06 • Normal Ops</div>
         </div>
       </div>
     </section>
 
-    <!-- Controls Bar: Macaron Category Filters, Search & Reset All to In-Progress -->
-    <section class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white/85 backdrop-blur-md rounded-2xl p-4 shadow-sm border-2 border-pink-100">
+    <!-- Controls Bar: Watsons Teal Category Filters, Search & Reset All to In-Progress -->
+    <section class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white rounded-2xl p-4 shadow-corporate border border-[#D5ECEE]">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mr-1 px-2" data-i18n="filter_label">Macaron Filter:</span>
-        <button onclick="filterCards('all')" id="filter-all" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-[#9D4EDD] text-white shadow-sm transition-all" data-i18n="filter_all">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mr-1 px-2" data-i18n="filter_label">Category Filter:</span>
+        <button onclick="filterCards('all')" id="filter-all" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#009990] text-white shadow-sm transition-all" data-i18n="filter_all">
           All Arrangements (5)
         </button>
-        <button onclick="filterCards('loader')" id="filter-loader" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-[#D8F3DC] hover:opacity-90 text-[#1B4332] transition-all" data-i18n="filter_loader">
+        <button onclick="filterCards('loader')" id="filter-loader" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F0FDFA] hover:bg-[#CCFBF1]/70 text-[#005F66] border border-[#009990]/25 transition-all" data-i18n="filter_loader">
           Loader & Notify Me (2)
         </button>
-        <button onclick="filterCards('infra')" id="filter-infra" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-[#EDE0FE] hover:opacity-90 text-[#3C096C] transition-all" data-i18n="filter_infra">
+        <button onclick="filterCards('infra')" id="filter-infra" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F0FDFA] hover:bg-[#CCFBF1]/70 text-[#005F66] border border-[#009990]/25 transition-all" data-i18n="filter_infra">
           Server & Support (2)
         </button>
-        <button onclick="filterCards('flash')" id="filter-flash" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-[#FFD8BE] hover:opacity-90 text-[#7F2B00] transition-all" data-i18n="filter_flash">
+        <button onclick="filterCards('flash')" id="filter-flash" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F0FDFA] hover:bg-[#CCFBF1]/70 text-[#005F66] border border-[#009990]/25 transition-all" data-i18n="filter_flash">
           Flash Sales & TA Team (1)
         </button>
       </div>
 
       <div class="flex items-center gap-3">
         <div class="relative flex-1 sm:w-64">
-          <i data-lucide="search" class="w-4 h-4 text-pink-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <i data-lucide="search" class="w-4 h-4 text-[#009990] absolute left-3.5 top-1/2 -translate-y-1/2"></i>
           <input
             id="search-input"
             type="text"
             oninput="handleSearch(this.value)"
             placeholder="Search IS21*, 3 Nov, TA Team..."
-            class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm rounded-xl bg-[#FFFDF9] border border-pink-200 focus:outline-none focus:border-[#9D4EDD] focus:ring-2 focus:ring-[#EDE0FE]"
+            class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] focus:outline-none focus:border-[#009990] focus:ring-2 focus:ring-[#CCFBF1]"
           />
         </div>
 
         <button
           onclick="resetAllToInProgress()"
           title="Reset all 5 cards and sub-checklists to In-Progress"
-          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold bg-[#FFF3B0] hover:bg-[#FFE5EC] text-[#7F4F24] border border-[#F4A261]/50 transition-all shrink-0 shadow-sm"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#F0FDFA] hover:bg-[#CCFBF1] text-[#005F66] border border-[#009990]/35 transition-all shrink-0 shadow-sm"
         >
-          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-[#009990]"></i>
           <span data-i18n="btn_reset">Reset All In-Progress</span>
         </button>
       </div>
     </section>
 
-    <!-- Section 2: 5 Macaron-Themed Arrangement Cards (All Defaulting to In-Progress) -->
+    <!-- Section 2: 5 Watsons Teal Corporate Arrangement Cards (All Defaulting to In-Progress) -->
     <section id="cards-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-      <!-- CARD 1: Pistachio Mint Macaron — File Loader Suspension (7 Cols) -->
-      <article data-category="loader" data-searchable="1 file loader suspension 9 nov 16:00 12 nov 01:00 14:00 is21* is22pe is23 image is31md is32* is53st promotion product price 檔案載入排程暫停 促銷 商品 價格" class="arrangement-card lg:col-span-7 bg-gradient-to-br from-[#D8F3DC]/65 via-white to-[#D8F3DC]/30 rounded-[2rem] p-6 sm:p-7 shadow-macaron hover:shadow-macaron-hover border-2 border-[#52B788]/40 transition-all flex flex-col justify-between">
+      <!-- CARD 1: File Loader Suspension (7 Cols) -->
+      <article data-category="loader" data-searchable="1 file loader suspension 9 nov 16:00 12 nov 01:00 14:00 is21* is22pe is23 image is31md is32* is53st promotion product price 檔案載入排程暫停 促銷 商品 價格" class="arrangement-card lg:col-span-7 bg-white rounded-2xl p-6 sm:p-7 shadow-corporate hover:shadow-corporate-hover border border-[#D5ECEE] border-t-4 border-t-[#009990] transition-all flex flex-col justify-between">
         <div>
           <!-- Card Header -->
-          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#52B788]/25">
+          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#D5ECEE]">
             <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-[#D8F3DC] text-[#1B4332] flex items-center justify-center font-mono font-extrabold text-lg border-2 border-white shadow-sm">
+              <div class="w-11 h-11 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center font-mono font-extrabold text-base border border-[#009990]/30">
                 01
               </div>
               <div>
                 <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-[#D8F3DC] text-[#1B4332]" data-i18n="c1_flavor">Pistachio Mint Track</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#F0FDFA] text-[#007A73] border border-[#009990]/20" data-i18n="c1_flavor">E2 Data Sync Control</span>
                   <span class="text-xs font-mono text-slate-400">JIRA#WTCTW-3783</span>
                 </div>
-                <h3 class="text-lg sm:text-xl font-extrabold text-[#1B4332] mt-0.5" data-i18n="c1_title">1. File Loader Suspension</h3>
+                <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5" data-i18n="c1_title">1. File Loader Suspension</h3>
               </div>
             </div>
 
             <!-- Interactive Status Badge (Defaults to In-Progress) -->
-            <button onclick="cycleTrackStatus(1)" id="track-badge-1" class="status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer" title="Click to toggle status">
+            <button onclick="cycleTrackStatus(1)" id="track-badge-1" class="status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer" title="Click to toggle status">
               <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E76F51]"></span>
+                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#007A73]"></span>
               </span>
               <span class="status-label">IN-PROGRESS</span>
             </button>
@@ -548,305 +530,305 @@
 
           <!-- Key Time Windows -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-5">
-            <div class="p-4 rounded-2xl bg-white/90 border border-[#52B788]/40 shadow-sm">
-              <div class="text-[11px] font-extrabold uppercase tracking-wider text-[#1B4332] flex items-center gap-1.5">
-                <i data-lucide="pause-circle" class="w-4 h-4 text-[#52B788]"></i>
+            <div class="p-4 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE]">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-[#005F66] flex items-center gap-1.5">
+                <i data-lucide="pause-circle" class="w-4 h-4 text-[#009990]"></i>
                 <span data-i18n="c1_box1_label">Suspension Period (HKT)</span>
               </div>
-              <div class="font-mono font-extrabold text-sm sm:text-base text-[#1B4332] mt-1">
+              <div class="font-mono font-extrabold text-sm sm:text-base text-slate-900 mt-1">
                 9 Nov 16:00 – 12 Nov 01:00
               </div>
-              <div class="text-xs text-slate-600 mt-0.5" data-i18n="c1_box1_sub">Resumes on 12 Nov 01:00 (HKT)</div>
+              <div class="text-xs text-slate-500 mt-0.5" data-i18n="c1_box1_sub">Resumes on 12 Nov 01:00 (HKT)</div>
             </div>
 
-            <div class="p-4 rounded-2xl bg-[#FFF3B0]/65 border border-[#F4A261]/50 shadow-sm">
-              <div class="text-[11px] font-extrabold uppercase tracking-wider text-[#7F4F24] flex items-center gap-1.5">
-                <i data-lucide="upload-cloud" class="w-4 h-4 text-[#F77F00]"></i>
+            <div class="p-4 rounded-xl bg-[#F0FDFA] border border-[#009990]/35">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-[#007A73] flex items-center gap-1.5">
+                <i data-lucide="upload-cloud" class="w-4 h-4 text-[#009990]"></i>
                 <span data-i18n="c1_box2_label">Mandatory Upload Cutoff</span>
               </div>
-              <div class="font-mono font-extrabold text-sm sm:text-base text-[#7F4F24] mt-1" data-i18n="c1_box2_time">
+              <div class="font-mono font-extrabold text-sm sm:text-base text-[#005F66] mt-1" data-i18n="c1_box2_time">
                 Before 9 Nov 14:00 (HKT)
               </div>
-              <div class="text-xs text-[#7F4F24]/90 mt-0.5" data-i18n="c1_box2_sub">Upload all necessary files for D11</div>
+              <div class="text-xs text-[#007A73] mt-0.5" data-i18n="c1_box2_sub">Upload all necessary files for D11</div>
             </div>
           </div>
 
-          <p class="text-sm text-slate-700 leading-relaxed" data-i18n="c1_desc">
-            All file loader jobs—including <strong>promotion, product, price, etc.</strong>—will be suspended and resume on <span class="font-mono font-bold text-[#1B4332]">12 Nov 01:00 (HKT)</span>. Please ensure all necessary files for D11 are uploaded before <span class="font-mono font-bold text-[#7F2B00]">9 Nov 14:00 (HKT)</span>.
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="c1_desc">
+            All file loader jobs—including <strong>promotion, product, price, etc.</strong>—will be suspended and resume on <span class="font-mono font-bold text-[#005F66]">12 Nov 01:00 (HKT)</span>. Please ensure all necessary files for D11 are uploaded before <span class="font-mono font-bold text-[#007A73]">9 Nov 14:00 (HKT)</span>.
           </p>
 
           <!-- Loader Files Interactive Status Grid -->
           <div class="mt-5">
             <div class="flex items-center justify-between mb-2.5">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-[#1B4332]" data-i18n="c1_list_title">Loader files include (Click to toggle status):</span>
-              <span class="text-xs font-mono font-bold text-[#7F4F24] bg-[#FFF3B0] px-2.5 py-0.5 rounded-full" data-i18n="c1_list_count">6/6 In-Progress</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-700" data-i18n="c1_list_title">Loader files include (Click to toggle status):</span>
+              <span class="text-xs font-mono font-bold text-[#005F66] bg-[#F0FDFA] px-2.5 py-0.5 rounded-full border border-[#009990]/30" data-i18n="c1_list_count">6/6 In-Progress</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="file-code" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS21*</span>
+                  <i data-lucide="file-code" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS21*</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="file-code" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS22PE</span>
+                  <i data-lucide="file-code" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS22PE</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="image" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS23 Image</span>
+                  <i data-lucide="image" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS23 Image</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="file-code" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS31MD</span>
+                  <i data-lucide="file-code" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS31MD</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="file-code" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS32*</span>
+                  <i data-lucide="file-code" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS32*</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-2xl bg-white/90 hover:bg-[#D8F3DC]/60 border border-[#52B788]/40 flex items-center justify-between transition-all shadow-sm">
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-3 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between transition-all">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="database" class="w-4 h-4 text-[#52B788]"></i>
-                  <span class="font-mono font-bold text-xs sm:text-sm text-[#1B4332]">IS53ST</span>
+                  <i data-lucide="database" class="w-4 h-4 text-[#009990]"></i>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-slate-800">IS53ST</span>
                 </div>
-                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Bottom Exception Alert -->
-        <div class="mt-6 pt-4 border-t border-[#52B788]/25 flex items-start gap-2.5 text-xs text-[#1B4332]">
-          <i data-lucide="alert-circle" class="w-4 h-4 text-[#52B788] shrink-0 mt-0.5"></i>
+        <div class="mt-6 pt-4 border-t border-[#D5ECEE] flex items-start gap-2.5 text-xs text-slate-600">
+          <i data-lucide="alert-circle" class="w-4 h-4 text-[#009990] shrink-0 mt-0.5"></i>
           <span data-i18n="c1_foot"><strong>Special Handling:</strong> If any files require import during the suspension period, please notify us in advance for special handling.</span>
         </div>
       </article>
 
-      <!-- CARD 2: Strawberry Rose Macaron — “Notify Me” Email Suspension (5 Cols) -->
-      <article data-category="loader" data-searchable="2 notify me email suspension warehouse requests 11 nov 00:00 12 nov 01:00 貨到通知我 郵件暫停 倉庫請求" class="arrangement-card lg:col-span-5 bg-gradient-to-br from-[#FFE5EC]/75 via-white to-[#FFE5EC]/35 rounded-[2rem] p-6 sm:p-7 shadow-macaron hover:shadow-macaron-hover border-2 border-[#FF8FAB]/45 transition-all flex flex-col justify-between">
+      <!-- CARD 2: “Notify Me” Email Suspension (5 Cols) -->
+      <article data-category="loader" data-searchable="2 notify me email suspension warehouse requests 11 nov 00:00 12 nov 01:00 貨到通知我 郵件暫停 倉庫請求" class="arrangement-card lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 shadow-corporate hover:shadow-corporate-hover border border-[#D5ECEE] border-t-4 border-t-[#007A73] transition-all flex flex-col justify-between">
         <div>
           <!-- Card Header -->
-          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#FF8FAB]/25">
+          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#D5ECEE]">
             <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-2xl bg-[#FFE5EC] text-[#800F2F] flex items-center justify-center font-mono font-extrabold text-lg border-2 border-white shadow-sm">
+              <div class="w-11 h-11 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center font-mono font-extrabold text-base border border-[#009990]/30">
                 02
               </div>
               <div>
-                <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-[#FFE5EC] text-[#800F2F]" data-i18n="c2_flavor">Strawberry Rose Track</span>
-                <h3 class="text-lg sm:text-xl font-extrabold text-[#800F2F] mt-0.5" data-i18n="c2_title">2. “Notify Me” Email Suspension</h3>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#F0FDFA] text-[#007A73] border border-[#009990]/20" data-i18n="c2_flavor">Warehouse Traffic Control</span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5" data-i18n="c2_title">2. “Notify Me” Email Suspension</h3>
               </div>
             </div>
 
-            <button onclick="cycleTrackStatus(2)" id="track-badge-2" class="status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer">
+            <button onclick="cycleTrackStatus(2)" id="track-badge-2" class="status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer">
               <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E76F51]"></span>
+                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#007A73]"></span>
               </span>
               <span class="status-label">IN-PROGRESS</span>
             </button>
           </div>
 
           <!-- Pause Schedule Box -->
-          <div class="my-5 p-4 rounded-2xl bg-white/90 border border-[#FF8FAB]/40 space-y-3 shadow-sm">
+          <div class="my-5 p-4 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-[#800F2F] flex items-center gap-1.5">
-                <i data-lucide="bell-off" class="w-4 h-4 text-[#FF8FAB]"></i>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#005F66] flex items-center gap-1.5">
+                <i data-lucide="bell-off" class="w-4 h-4 text-[#009990]"></i>
                 <span data-i18n="c2_box_title">Email Trigger Pause Window</span>
               </span>
-              <span class="text-xs font-mono font-extrabold text-[#800F2F] bg-[#FFE5EC] px-2.5 py-0.5 rounded-full" data-i18n="c2_box_tag">25 Hours Lock</span>
+              <span class="text-xs font-mono font-bold text-[#007A73] bg-[#F0FDFA] px-2.5 py-0.5 rounded-full border border-[#009990]/30" data-i18n="c2_box_tag">25 Hours Lock</span>
             </div>
 
             <div class="grid grid-cols-2 gap-3 pt-1">
-              <div class="bg-[#FFE5EC]/45 p-3 rounded-xl border border-[#FF8FAB]/30">
-                <div class="text-[10px] font-extrabold uppercase text-[#800F2F]/70" data-i18n="c2_pause_label">Paused On</div>
-                <div class="font-mono font-extrabold text-sm text-[#800F2F] mt-0.5">11 Nov 00:00</div>
-                <div class="text-[11px] font-mono text-[#800F2F]/80">HKT</div>
+              <div class="bg-white p-3 rounded-lg border border-[#D5ECEE]">
+                <div class="text-[10px] font-bold uppercase text-slate-400" data-i18n="c2_pause_label">Paused On</div>
+                <div class="font-mono font-extrabold text-sm text-slate-900 mt-0.5">11 Nov 00:00</div>
+                <div class="text-[11px] font-mono text-[#007A73]">HKT</div>
               </div>
-              <div class="bg-[#D8F3DC]/50 p-3 rounded-xl border border-[#52B788]/30">
-                <div class="text-[10px] font-extrabold uppercase text-[#1B4332]/70" data-i18n="c2_resume_label">Resumes On</div>
-                <div class="font-mono font-extrabold text-sm text-[#1B4332] mt-0.5">12 Nov 01:00</div>
-                <div class="text-[11px] font-mono text-[#1B4332]/80">HKT</div>
+              <div class="bg-[#F0FDFA] p-3 rounded-lg border border-[#009990]/30">
+                <div class="text-[10px] font-bold uppercase text-[#007A73]" data-i18n="c2_resume_label">Resumes On</div>
+                <div class="font-mono font-extrabold text-sm text-[#005F66] mt-0.5">12 Nov 01:00</div>
+                <div class="text-[11px] font-mono text-[#007A73]">HKT</div>
               </div>
             </div>
           </div>
 
-          <p class="text-sm text-slate-700 leading-relaxed" data-i18n="c2_desc">
-            To avoid excessive warehouse requests, the <strong>“Notify Me” email trigger</strong> will be paused on <span class="font-mono font-bold text-[#800F2F]">11 Nov 00:00 (HKT)</span> and resume on <span class="font-mono font-bold text-[#1B4332]">12 Nov 01:00 (HKT)</span>.
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="c2_desc">
+            To avoid excessive warehouse requests, the <strong>“Notify Me” email trigger</strong> will be paused on <span class="font-mono font-bold text-[#005F66]">11 Nov 00:00 (HKT)</span> and resume on <span class="font-mono font-bold text-[#007A73]">12 Nov 01:00 (HKT)</span>.
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-[#FF8FAB]/25 flex items-center justify-between text-xs text-[#800F2F]">
+        <div class="mt-6 pt-4 border-t border-[#D5ECEE] flex items-center justify-between text-xs text-[#005F66]">
           <span class="flex items-center gap-1.5 font-bold">
-            <i data-lucide="warehouse" class="w-4 h-4 text-[#FF8FAB]"></i>
+            <i data-lucide="warehouse" class="w-4 h-4 text-[#009990]"></i>
             <span data-i18n="c2_foot">Warehouse Request Protection</span>
           </span>
-          <span class="font-mono font-extrabold bg-[#FFF3B0] text-[#7F4F24] px-2.5 py-0.5 rounded-full" data-i18n="status_in_progress_short">In-Progress</span>
+          <span class="font-mono font-bold bg-[#F0FDFA] text-[#007A73] px-2.5 py-0.5 rounded-full border border-[#009990]/30" data-i18n="status_in_progress_short">In-Progress</span>
         </div>
       </article>
 
-      <!-- CARD 3: Lavender Taro Macaron — Enlarged Server Capacity (4 Cols) -->
-      <article data-category="infra" data-searchable="3 enlarged server capacity traffic forecast bu scale up services estore stable 伺服器容量擴充 流量預估" class="arrangement-card lg:col-span-4 bg-gradient-to-br from-[#EDE0FE]/75 via-white to-[#EDE0FE]/35 rounded-[2rem] p-6 sm:p-7 shadow-macaron hover:shadow-macaron-hover border-2 border-[#9D4EDD]/40 transition-all flex flex-col justify-between">
+      <!-- CARD 3: Enlarged Server Capacity (4 Cols) -->
+      <article data-category="infra" data-searchable="3 enlarged server capacity traffic forecast bu scale up services estore stable 伺服器容量擴充 流量預估" class="arrangement-card lg:col-span-4 bg-white rounded-2xl p-6 sm:p-7 shadow-corporate hover:shadow-corporate-hover border border-[#D5ECEE] border-t-4 border-t-[#009DA5] transition-all flex flex-col justify-between">
         <div>
-          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#9D4EDD]/20">
+          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#D5ECEE]">
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-[#EDE0FE] text-[#3C096C] flex items-center justify-center font-mono font-extrabold text-base border-2 border-white shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center font-mono font-extrabold text-sm border border-[#009990]/30">
                 03
               </div>
               <div>
-                <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-[#EDE0FE] text-[#3C096C]" data-i18n="c3_flavor">Lavender Taro Track</span>
-                <h3 class="text-lg font-extrabold text-[#3C096C] mt-0.5" data-i18n="c3_title">3. Enlarged Server Capacity</h3>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#F0FDFA] text-[#007A73] border border-[#009990]/20" data-i18n="c3_flavor">Cloud Infrastructure</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-0.5" data-i18n="c3_title">3. Enlarged Server Capacity</h3>
               </div>
             </div>
 
-            <button onclick="cycleTrackStatus(3)" id="track-badge-3" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer">
+            <button onclick="cycleTrackStatus(3)" id="track-badge-3" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer">
               <span class="relative flex h-2 w-2">
-                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E76F51]"></span>
+                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#007A73]"></span>
               </span>
               <span class="status-label">IN-PROGRESS</span>
             </button>
           </div>
 
-          <div class="my-5 p-4 rounded-2xl bg-white/90 border border-[#9D4EDD]/30 space-y-2.5 shadow-sm">
+          <div class="my-5 p-4 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] space-y-2.5">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-extrabold text-[#3C096C] flex items-center gap-1.5">
-                <i data-lucide="server" class="w-4 h-4 text-[#9D4EDD]"></i>
+              <span class="font-bold text-[#005F66] flex items-center gap-1.5">
+                <i data-lucide="server" class="w-4 h-4 text-[#009990]"></i>
                 <span data-i18n="c3_box_title">eStore Scaling Readiness</span>
               </span>
-              <span class="font-mono font-extrabold text-[#3C096C]" data-i18n="status_in_progress_short">In-Progress</span>
+              <span class="font-mono font-bold text-[#007A73]" data-i18n="status_in_progress_short">In-Progress</span>
             </div>
-            <div class="w-full h-2.5 bg-[#EDE0FE] rounded-full overflow-hidden">
-              <div class="h-full w-4/5 bg-gradient-to-r from-[#9D4EDD] to-[#FF8FAB] bg-macaron-stripes rounded-full"></div>
+            <div class="w-full h-2.5 bg-[#E6F7F8] rounded-full overflow-hidden">
+              <div class="h-full w-4/5 bg-gradient-to-r from-[#007A73] to-[#009990] bg-teal-stripes rounded-full"></div>
             </div>
-            <div class="text-[11px] text-[#3C096C]/80 font-medium" data-i18n="c3_box_sub">Scaled according to BU traffic forecast</div>
+            <div class="text-[11px] text-slate-500 font-medium" data-i18n="c3_box_sub">Scaled according to BU traffic forecast</div>
           </div>
 
-          <p class="text-sm text-slate-700 leading-relaxed" data-i18n="c3_desc">
+          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="c3_desc">
             Based on the traffic forecast shared by BU, we will scale up services to ensure the <strong>eStore remains stable throughout D11</strong>.
           </p>
-          <p class="text-xs text-[#3C096C] bg-[#EDE0FE]/60 border border-[#9D4EDD]/30 rounded-xl p-3 mt-3 leading-relaxed" data-i18n="c3_note">
+          <p class="text-xs text-[#005F66] bg-[#F0FDFA] border border-[#009990]/30 rounded-xl p-3 mt-3 leading-relaxed" data-i18n="c3_note">
             If there are any significant changes to the forecast, please update us promptly for further assessment.
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-[#9D4EDD]/20 flex items-center justify-between text-xs text-[#3C096C]">
+        <div class="mt-6 pt-4 border-t border-[#D5ECEE] flex items-center justify-between text-xs text-[#005F66]">
           <span class="font-bold" data-i18n="c3_foot_left">Target: Throughout D11</span>
-          <span class="font-mono font-extrabold" data-i18n="c3_foot_right">BU Forecast Active</span>
+          <span class="font-mono font-bold text-[#007A73]" data-i18n="c3_foot_right">BU Forecast Active</span>
         </div>
       </article>
 
-      <!-- CARD 4: Sky Blueberry Macaron — Production Support During D11 (4 Cols) -->
-      <article data-category="infra" data-searchable="4 production support during d11 working hours non-working hours teams whatsapp urgent call 正式環境支援 上班時間 非上班時間 緊急事項" class="arrangement-card lg:col-span-4 bg-gradient-to-br from-[#DCEEFB]/75 via-white to-[#DCEEFB]/35 rounded-[2rem] p-6 sm:p-7 shadow-macaron hover:shadow-macaron-hover border-2 border-[#48CAE4]/45 transition-all flex flex-col justify-between">
+      <!-- CARD 4: Production Support During D11 (4 Cols) -->
+      <article data-category="infra" data-searchable="4 production support during d11 working hours non-working hours teams whatsapp urgent call 正式環境支援 上班時間 非上班時間 緊急事項" class="arrangement-card lg:col-span-4 bg-white rounded-2xl p-6 sm:p-7 shadow-corporate hover:shadow-corporate-hover border border-[#D5ECEE] border-t-4 border-t-[#005F66] transition-all flex flex-col justify-between">
         <div>
-          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#48CAE4]/30">
+          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#D5ECEE]">
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-[#DCEEFB] text-[#023E8A] flex items-center justify-center font-mono font-extrabold text-base border-2 border-white shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center font-mono font-extrabold text-sm border border-[#009990]/30">
                 04
               </div>
               <div>
-                <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-[#DCEEFB] text-[#023E8A]" data-i18n="c4_flavor">Sky Blueberry Track</span>
-                <h3 class="text-lg font-extrabold text-[#023E8A] mt-0.5" data-i18n="c4_title">4. Production Support</h3>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#F0FDFA] text-[#007A73] border border-[#009990]/20" data-i18n="c4_flavor">Incident Response</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-0.5" data-i18n="c4_title">4. Production Support</h3>
               </div>
             </div>
 
-            <button onclick="cycleTrackStatus(4)" id="track-badge-4" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer">
+            <button onclick="cycleTrackStatus(4)" id="track-badge-4" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer">
               <span class="relative flex h-2 w-2">
-                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E76F51]"></span>
+                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#007A73]"></span>
               </span>
               <span class="status-label">IN-PROGRESS</span>
             </button>
           </div>
 
-          <p class="text-sm text-slate-700 mt-4 mb-4 font-medium" data-i18n="c4_desc">
+          <p class="text-sm text-slate-600 mt-4 mb-4 font-medium" data-i18n="c4_desc">
             Please continue to report production issues via the existing channels:
           </p>
 
           <!-- Channels List -->
           <div class="space-y-2.5">
-            <div class="p-3 rounded-2xl bg-white/90 border border-[#48CAE4]/40 flex items-center justify-between shadow-sm">
+            <div class="p-3 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] flex items-center justify-between">
               <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-[#DCEEFB] text-[#023E8A] flex items-center justify-center">
+                <div class="w-8 h-8 rounded-lg bg-[#F0FDFA] text-[#007A73] flex items-center justify-center border border-[#009990]/25">
                   <i data-lucide="sun" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-extrabold text-[#023E8A]" data-i18n="c4_ch1_title">Working hours</div>
+                  <div class="text-xs font-bold text-slate-900" data-i18n="c4_ch1_title">Working hours</div>
                   <div class="text-[11px] text-slate-500" data-i18n="c4_ch1_sub">Standard support channel</div>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#DCEEFB] text-[#023E8A]">Teams</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/30">Teams</span>
             </div>
 
-            <div class="p-3 rounded-2xl bg-white/90 border border-[#52B788]/40 flex items-center justify-between shadow-sm">
+            <div class="p-3 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] flex items-center justify-between">
               <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-[#D8F3DC] text-[#1B4332] flex items-center justify-center">
+                <div class="w-8 h-8 rounded-lg bg-[#F0FDFA] text-[#007A73] flex items-center justify-center border border-[#009990]/25">
                   <i data-lucide="moon" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-extrabold text-[#1B4332]" data-i18n="c4_ch2_title">Non-working hours</div>
+                  <div class="text-xs font-bold text-slate-900" data-i18n="c4_ch2_title">Non-working hours</div>
                   <div class="text-[11px] text-slate-500" data-i18n="c4_ch2_sub">Off-hours standby</div>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-[#D8F3DC] text-[#1B4332]">Teams / WhatsApp</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/30">Teams / WhatsApp</span>
             </div>
 
-            <div class="p-3 rounded-2xl bg-[#FFE5EC]/80 border border-[#FF8FAB]/50 flex items-center justify-between shadow-sm">
+            <div class="p-3 rounded-xl bg-[#FEF2F2] border border-[#E61E2A]/25 flex items-center justify-between">
               <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-white text-[#800F2F] flex items-center justify-center">
+                <div class="w-8 h-8 rounded-lg bg-white text-[#E61E2A] flex items-center justify-center border border-[#E61E2A]/20">
                   <i data-lucide="phone-call" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-extrabold text-[#800F2F]" data-i18n="c4_ch3_title">Urgent matters</div>
-                  <div class="text-[11px] text-[#800F2F]/80" data-i18n="c4_ch3_sub">Immediate escalation</div>
+                  <div class="text-xs font-bold text-[#E61E2A]" data-i18n="c4_ch3_title">Urgent matters</div>
+                  <div class="text-[11px] text-slate-600" data-i18n="c4_ch3_sub">Immediate escalation</div>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-xl text-xs font-mono font-extrabold bg-white text-[#800F2F] border border-[#FF8FAB]/40" data-i18n="c4_ch3_badge">Call via Teams</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-white text-[#E61E2A] border border-[#E61E2A]/30" data-i18n="c4_ch3_badge">Call via Teams</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-[#48CAE4]/30 flex items-center justify-between text-xs text-[#023E8A]">
+        <div class="mt-6 pt-4 border-t border-[#D5ECEE] flex items-center justify-between text-xs text-[#005F66]">
           <span class="font-bold" data-i18n="c4_foot">D11 Duty Roster</span>
-          <span class="font-mono font-extrabold" data-i18n="status_in_progress_short">In-Progress</span>
+          <span class="font-mono font-bold text-[#007A73]" data-i18n="status_in_progress_short">In-Progress</span>
         </div>
       </article>
 
-      <!-- CARD 5: Peach & Lemon Macaron — Flash Sales Special Support & TA Team (4 Cols) -->
-      <article data-category="flash" data-searchable="5 flash sales special support ta team 3 nov 6 nov sku list campaign stock promotion id start end date 限時搶購特別支援 促銷編號 庫存" class="arrangement-card lg:col-span-4 bg-gradient-to-br from-[#FFD8BE]/80 via-white to-[#FFF3B0]/60 rounded-[2rem] p-6 sm:p-7 shadow-macaron hover:shadow-macaron-hover border-2 border-[#F77F00]/45 transition-all flex flex-col justify-between">
+      <!-- CARD 5: Flash Sales Special Support & TA Team (4 Cols) -->
+      <article data-category="flash" data-searchable="5 flash sales special support ta team 3 nov 6 nov sku list campaign stock promotion id start end date 限時搶購特別支援 促銷編號 庫存" class="arrangement-card lg:col-span-4 bg-white rounded-2xl p-6 sm:p-7 shadow-corporate hover:shadow-corporate-hover border border-[#D5ECEE] border-t-4 border-t-[#E61E2A] transition-all flex flex-col justify-between">
         <div>
-          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#F77F00]/25">
+          <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-[#D5ECEE]">
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-2xl bg-[#FFD8BE] text-[#7F2B00] flex items-center justify-center font-mono font-extrabold text-base border-2 border-white shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center font-mono font-extrabold text-sm border border-[#009990]/30">
                 05
               </div>
               <div>
-                <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-[#FFD8BE] text-[#7F2B00]" data-i18n="c5_flavor">Peach Coral Track</span>
-                <h3 class="text-lg font-extrabold text-[#7F2B00] mt-0.5" data-i18n="c5_title">5. Flash Sales Support</h3>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#FEF2F2] text-[#E61E2A] border border-[#E61E2A]/20" data-i18n="c5_flavor">Campaign Priority</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-0.5" data-i18n="c5_title">5. Flash Sales Support</h3>
               </div>
             </div>
 
-            <button onclick="cycleTrackStatus(5)" id="track-badge-5" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer">
+            <button onclick="cycleTrackStatus(5)" id="track-badge-5" class="status-pill group inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer">
               <span class="relative flex h-2 w-2">
-                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E76F51]"></span>
+                <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#007A73]"></span>
               </span>
               <span class="status-label">IN-PROGRESS</span>
             </button>
@@ -854,83 +836,83 @@
 
           <!-- Highlighted Callout 1 & 2: TA Team 3 Nov & Import 6 Nov -->
           <div class="my-4 space-y-2.5">
-            <div class="p-3 rounded-2xl bg-[#FFE5EC] border-2 border-[#FF8FAB]/60 flex items-center justify-between shadow-sm">
+            <div class="p-3 rounded-xl bg-[#FEF2F2] border border-[#E61E2A]/30 flex items-center justify-between">
               <div>
                 <div class="flex items-center gap-1.5">
-                  <span class="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-md bg-[#800F2F] text-white">TA TEAM</span>
-                  <span class="text-xs font-extrabold text-[#800F2F]" data-i18n="c5_ta_title">Provide Promotion IDs</span>
+                  <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-[#E61E2A] text-white">TA TEAM</span>
+                  <span class="text-xs font-extrabold text-slate-900" data-i18n="c5_ta_title">Provide Promotion IDs</span>
                 </div>
-                <div class="text-xs text-[#800F2F]/90 mt-0.5" data-i18n="c5_ta_sub">By <strong class="font-mono underline">3 Nov</strong> at the latest</div>
+                <div class="text-xs text-slate-600 mt-0.5" data-i18n="c5_ta_sub">By <strong class="font-mono text-[#E61E2A] underline">3 Nov</strong> at the latest</div>
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-extrabold bg-white text-[#800F2F] border border-[#FF8FAB]" data-i18n="status_in_progress_short">In-Progress</span>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-white text-[#007A73] border border-[#009990]/35" data-i18n="status_in_progress_short">In-Progress</span>
             </div>
 
-            <div class="p-3 rounded-2xl bg-[#FFF3B0]/90 border border-[#F4A261]/60 flex items-center justify-between shadow-sm">
+            <div class="p-3 rounded-xl bg-[#F0FDFA] border border-[#009990]/35 flex items-center justify-between">
               <div>
-                <div class="text-xs font-extrabold text-[#7F4F24]" data-i18n="c5_imp_title">Import & Verification Cutoff</div>
-                <div class="text-xs text-[#7F4F24]/90 mt-0.5" data-i18n="c5_imp_sub">Share info & import before <strong class="font-mono">6 Nov</strong></div>
+                <div class="text-xs font-bold text-[#005F66]" data-i18n="c5_imp_title">Import & Verification Cutoff</div>
+                <div class="text-xs text-[#007A73] mt-0.5" data-i18n="c5_imp_sub">Share info & import before <strong class="font-mono">6 Nov</strong></div>
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-extrabold bg-white text-[#7F4F24] border border-[#F4A261]" data-i18n="status_in_progress_short">In-Progress</span>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-white text-[#007A73] border border-[#009990]/35" data-i18n="status_in_progress_short">In-Progress</span>
             </div>
           </div>
 
           <!-- Required BU Deliverables Interactive Checklist -->
           <div class="mt-3">
-            <div class="text-xs font-extrabold uppercase tracking-wider text-[#7F2B00] mb-2" data-i18n="c5_list_title">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2" data-i18n="c5_list_title">
               Schedule & Checking Checklist:
             </div>
             <div class="space-y-1.5">
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-white/90 hover:bg-[#FFD8BE]/50 border border-[#F77F00]/30 flex items-center justify-between text-xs transition-all shadow-sm">
-                <span class="font-bold text-[#7F2B00] flex items-center gap-2">
-                  <i data-lucide="package-check" class="w-3.5 h-3.5 text-[#F77F00]"></i>
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between text-xs transition-all">
+                <span class="font-bold text-slate-800 flex items-center gap-2">
+                  <i data-lucide="package-check" class="w-3.5 h-3.5 text-[#009990]"></i>
                   <span data-i18n="c5_item1">Flash Sales item (SKU list)</span>
                 </span>
-                <span class="sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-white/90 hover:bg-[#FFD8BE]/50 border border-[#F77F00]/30 flex items-center justify-between text-xs transition-all shadow-sm">
-                <span class="font-bold text-[#7F2B00] flex items-center gap-2">
-                  <i data-lucide="boxes" class="w-3.5 h-3.5 text-[#F77F00]"></i>
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between text-xs transition-all">
+                <span class="font-bold text-slate-800 flex items-center gap-2">
+                  <i data-lucide="boxes" class="w-3.5 h-3.5 text-[#009990]"></i>
                   <span data-i18n="c5_item2">Campaign stock</span>
                 </span>
-                <span class="sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-white/90 hover:bg-[#FFD8BE]/50 border border-[#F77F00]/30 flex items-center justify-between text-xs transition-all shadow-sm">
-                <span class="font-bold text-[#7F2B00] flex items-center gap-2">
-                  <i data-lucide="tag" class="w-3.5 h-3.5 text-[#F77F00]"></i>
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between text-xs transition-all">
+                <span class="font-bold text-slate-800 flex items-center gap-2">
+                  <i data-lucide="tag" class="w-3.5 h-3.5 text-[#009990]"></i>
                   <span data-i18n="c5_item3">Flash Sales promotion ID</span>
                 </span>
-                <span class="sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
 
-              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-white/90 hover:bg-[#FFD8BE]/50 border border-[#F77F00]/30 flex items-center justify-between text-xs transition-all shadow-sm">
-                <span class="font-bold text-[#7F2B00] flex items-center gap-2">
-                  <i data-lucide="calendar-clock" class="w-3.5 h-3.5 text-[#F77F00]"></i>
+              <div onclick="toggleSubItem(this)" data-state="In-Progress" class="sub-item cursor-pointer p-2.5 rounded-xl bg-[#F4F9F9] hover:bg-[#F0FDFA] border border-[#D5ECEE] flex items-center justify-between text-xs transition-all">
+                <span class="font-bold text-slate-800 flex items-center gap-2">
+                  <i data-lucide="calendar-clock" class="w-3.5 h-3.5 text-[#009990]"></i>
                   <span data-i18n="c5_item4">Campaign start/end date</span>
                 </span>
-                <span class="sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">In-Progress</span>
+                <span class="sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">In-Progress</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-5 pt-3 border-t border-[#F77F00]/25 flex items-center justify-between text-xs text-[#7F2B00]">
+        <div class="mt-5 pt-3 border-t border-[#D5ECEE] flex items-center justify-between text-xs text-[#005F66]">
           <span class="font-bold" data-i18n="c5_foot_left">Verification: Before 6 Nov</span>
-          <span class="font-mono font-extrabold" data-i18n="c5_foot_right">TA & BU Sync</span>
+          <span class="font-mono font-bold text-[#007A73]" data-i18n="c5_foot_right">TA & BU Sync</span>
         </div>
       </article>
 
     </section>
 
-    <!-- Section 3: Consolidated Macaron Master Deliverable Matrix -->
-    <section class="bg-white/90 backdrop-blur-md rounded-[2rem] p-6 sm:p-8 shadow-macaron border-2 border-purple-100 overflow-hidden">
+    <!-- Section 3: Consolidated Watsons Corporate Master Deliverable Matrix -->
+    <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-corporate border border-[#D5ECEE] overflow-hidden">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-wider text-[#9D4EDD]" data-i18n="matrix_subtitle">Master Project Matrix • JIRA#WTCTW-3783</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#007A73]" data-i18n="matrix_subtitle">Master Project Matrix • JIRA#WTCTW-3783</span>
           <h3 class="text-xl font-extrabold text-slate-900 mt-0.5" data-i18n="matrix_title">[WTCTW][D11 Campaign] eLab D11 Campaign Arrangement</h3>
         </div>
-        <button onclick="copyAnnouncementText()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#3C096C] hover:bg-[#9D4EDD] text-white text-xs font-extrabold transition-all self-start sm:self-auto shadow-sm">
+        <button onclick="copyAnnouncementText()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005F66] hover:bg-[#007A73] text-white text-xs font-bold transition-all self-start sm:self-auto shadow-sm">
           <i data-lucide="copy" class="w-3.5 h-3.5"></i>
           <span data-i18n="btn_copy_full">Copy Full Notice with Subject</span>
         </button>
@@ -939,7 +921,7 @@
       <div class="overflow-x-auto -mx-6 sm:mx-0">
         <table class="w-full text-left border-collapse min-w-[720px]">
           <thead>
-            <tr class="border-b-2 border-pink-100 text-[11px] font-extrabold uppercase tracking-wider text-[#3C096C] bg-[#EDE0FE]/40">
+            <tr class="border-b-2 border-[#D5ECEE] text-[11px] font-bold uppercase tracking-wider text-[#005F66] bg-[#F0FDFA]">
               <th class="py-3.5 px-4 rounded-tl-xl" data-i18n="th_track">Track</th>
               <th class="py-3.5 px-4" data-i18n="th_item">Arrangement / Action Item</th>
               <th class="py-3.5 px-4" data-i18n="th_owner">Owner / Scope</th>
@@ -947,75 +929,75 @@
               <th class="py-3.5 px-4 text-right rounded-tr-xl" data-i18n="th_status">Current Status</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-pink-100/80 text-xs sm:text-sm">
-            <tr class="hover:bg-[#FFE5EC]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#800F2F]">#05-A</td>
+          <tbody class="divide-y divide-[#D5ECEE] text-xs sm:text-sm">
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#E61E2A]">#05-A</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr1_item">TA Team Action: Provide Flash Sales Promotion IDs</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FFE5EC] text-[#800F2F]">TA Team</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-[#800F2F]" data-i18n="tr1_date">By 3 Nov (Latest)</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#FEF2F2] text-[#E61E2A] border border-[#E61E2A]/20">TA Team</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-[#E61E2A]" data-i18n="tr1_date">By 3 Nov (Latest)</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
             </tr>
-            <tr class="hover:bg-[#FFF3B0]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#7F4F24]">#05-B</td>
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#007A73]">#05-B</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr2_item">Share Flash Sales Info & Import Promotion for Verification</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FFF3B0] text-[#7F4F24]">BU / eLab</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-slate-800" data-i18n="tr2_date">Before 6 Nov</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/25">BU / eLab</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-slate-800" data-i18n="tr2_date">Before 6 Nov</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
             </tr>
-            <tr class="hover:bg-[#D8F3DC]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#1B4332]">#01-A</td>
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#007A73]">#01-A</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr3_item">Upload All Necessary D11 Files Prior to Suspension</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#D8F3DC] text-[#1B4332]">BU / Merchandising</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-slate-800" data-i18n="tr3_date">Before 9 Nov 14:00 (HKT)</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/25">BU / Merchandising</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-slate-800" data-i18n="tr3_date">Before 9 Nov 14:00 (HKT)</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
             </tr>
-            <tr class="hover:bg-[#D8F3DC]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#1B4332]">#01-B</td>
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#007A73]">#01-B</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr4_item">File Loader Suspension (IS21*, IS22PE, IS23 Image, IS31MD, IS32*, IS53ST)</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#D8F3DC] text-[#1B4332]">E2 System Ops</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-slate-800">9 Nov 16:00 – 12 Nov 01:00 (HKT)</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/25">E2 System Ops</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-slate-800">9 Nov 16:00 – 12 Nov 01:00 (HKT)</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
             </tr>
-            <tr class="hover:bg-[#FFE5EC]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#800F2F]">#02</td>
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#007A73]">#02</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr5_item">“Notify Me” Email Trigger Suspension</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FFE5EC] text-[#800F2F]">E2 / Warehouse</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-slate-800">11 Nov 00:00 – 12 Nov 01:00 (HKT)</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/25">E2 / Warehouse</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-slate-800">11 Nov 00:00 – 12 Nov 01:00 (HKT)</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
             </tr>
-            <tr class="hover:bg-[#EDE0FE]/30 transition-colors">
-              <td class="py-3.5 px-4 font-mono font-extrabold text-[#3C096C]">#03 & #04</td>
+            <tr class="hover:bg-[#F0FDFA]/60 transition-colors">
+              <td class="py-3.5 px-4 font-mono font-bold text-[#007A73]">#03 & #04</td>
               <td class="py-3.5 px-4 font-bold text-slate-900" data-i18n="tr6_item">Enlarged Server Capacity & Production Support (Teams / WhatsApp)</td>
-              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#EDE0FE] text-[#3C096C]">eLab Infra & Support</span></td>
-              <td class="py-3.5 px-4 font-mono text-xs font-extrabold text-slate-800" data-i18n="tr6_date">Throughout D11 (11 Nov)</td>
+              <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/25">eLab Infra & Support</span></td>
+              <td class="py-3.5 px-4 font-mono text-xs font-bold text-slate-800" data-i18n="tr6_date">Throughout D11 (11 Nov)</td>
               <td class="py-3.5 px-4 text-right">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#F77F00] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#009990] animate-ping"></span>
                   <span data-i18n="status_in_progress_short">In-Progress</span>
                 </span>
               </td>
@@ -1029,29 +1011,29 @@
 
   <!-- Modal: Full Official D11 Announcement Text with Subject Line -->
   <div id="email-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
-    <div class="bg-[#FFFDF9] rounded-[2rem] max-w-2xl w-full p-6 sm:p-8 shadow-2xl border-2 border-pink-200 max-h-[90vh] flex flex-col">
-      <div class="flex items-center justify-between pb-4 border-b border-pink-100">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-[#D5ECEE] max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between pb-4 border-b border-[#D5ECEE]">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-[#FFE5EC] text-[#800F2F] flex items-center justify-center">
+          <div class="w-10 h-10 rounded-xl bg-[#F0FDFA] text-[#007A73] flex items-center justify-center border border-[#009990]/30">
             <i data-lucide="file-text" class="w-5 h-5"></i>
           </div>
           <div>
             <h4 class="font-extrabold text-slate-900" data-i18n="modal_title">[WTCTW][D11 Campaign] eLab D11 Campaign Arrangement</h4>
-            <p class="text-xs font-mono text-[#9D4EDD]" data-i18n="modal_sub">JIRA#WTCTW-3783 • Full English Notice</p>
+            <p class="text-xs font-mono text-[#007A73]" data-i18n="modal_sub">JIRA#WTCTW-3783 • Full English Notice</p>
           </div>
         </div>
-        <button onclick="closeEmailModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-pink-50">
+        <button onclick="closeEmailModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <pre id="announcement-raw-text" class="my-4 p-4 rounded-2xl bg-white border border-pink-200 text-xs sm:text-sm font-sans whitespace-pre-wrap text-slate-700 overflow-y-auto flex-1 leading-relaxed"></pre>
+      <pre id="announcement-raw-text" class="my-4 p-4 rounded-xl bg-[#F4F9F9] border border-[#D5ECEE] text-xs sm:text-sm font-sans whitespace-pre-wrap text-slate-700 overflow-y-auto flex-1 leading-relaxed"></pre>
 
       <div class="flex items-center justify-end gap-3 pt-2">
-        <button onclick="closeEmailModal()" class="px-4 py-2.5 rounded-xl text-xs font-extrabold text-slate-600 hover:bg-pink-50" data-i18n="btn_close">
+        <button onclick="closeEmailModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100" data-i18n="btn_close">
           Close
         </button>
-        <button onclick="copyAnnouncementText()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-extrabold bg-gradient-to-r from-[#FF8FAB] to-[#9D4EDD] text-white shadow-md">
+        <button onclick="copyAnnouncementText()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#009990] hover:bg-[#007A73] text-white shadow-sm">
           <i data-lucide="copy" class="w-4 h-4"></i>
           <span data-i18n="btn_copy_clipboard">Copy to Clipboard</span>
         </button>
@@ -1059,9 +1041,9 @@
     </div>
   </div>
 
-  <!-- Custom Macaron Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-4 py-3 rounded-2xl bg-[#3C096C] text-white text-xs sm:text-sm font-bold shadow-xl border-2 border-[#EDE0FE]">
-    <i data-lucide="sparkles" class="w-4 h-4 text-[#FFF3B0]"></i>
+  <!-- Custom Watsons Corporate Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-4 py-3 rounded-xl bg-[#005F66] text-white text-xs sm:text-sm font-bold shadow-xl border border-[#009990]">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#5EEAD4]"></i>
     <span id="toast-message">Action completed</span>
   </div>
 
@@ -1105,11 +1087,11 @@
         kpi2_desc: 'Share schedule & import Flash Sales promo',
         kpi2_foot: 'For Verification',
         kpi3_tag: 'Loader Cutoff',
-        kpi3_date: '09 Nov <span class="text-sm">14:00</span>',
+        kpi3_date: '09 Nov <span class="text-sm text-[#007A73]">14:00</span>',
         kpi3_desc: 'Upload files before 16:00 HKT suspension',
         kpi3_foot: '6 Loader Job Types',
         kpi4_tag: 'D11 Peak Lock',
-        kpi4_date: '11 Nov <span class="text-sm">00:00</span>',
+        kpi4_date: '11 Nov <span class="text-sm text-[#007A73]">00:00</span>',
         kpi4_desc: 'Notify Me paused until 12 Nov 01:00 HKT',
         tl_subtitle: 'Chronological Execution Roadmap • JIRA#WTCTW-3783',
         tl_title: 'eLab D11 Critical Timeline & Freeze Windows (HKT)',
@@ -1132,33 +1114,33 @@
         tl6_title: 'Full Resumption',
         tl6_desc: 'File Loader jobs and "Notify Me" email triggers resume on <strong>12 Nov 01:00 (HKT)</strong>.',
         tl6_foot: 'Step 06 • Normal Ops',
-        filter_label: 'Macaron Filter:',
+        filter_label: 'Category Filter:',
         filter_all: 'All Arrangements (5)',
         filter_loader: 'Loader & Notify Me (2)',
         filter_infra: 'Server & Support (2)',
         filter_flash: 'Flash Sales & TA Team (1)',
         search_placeholder: 'Search IS21*, 3 Nov, TA Team...',
         btn_reset: 'Reset All In-Progress',
-        c1_flavor: 'Pistachio Mint Track',
+        c1_flavor: 'E2 Data Sync Control',
         c1_title: '1. File Loader Suspension',
         c1_box1_label: 'Suspension Period (HKT)',
         c1_box1_sub: 'Resumes on 12 Nov 01:00 (HKT)',
         c1_box2_label: 'Mandatory Upload Cutoff',
         c1_box2_time: 'Before 9 Nov 14:00 (HKT)',
         c1_box2_sub: 'Upload all necessary files for D11',
-        c1_desc: 'All file loader jobs—including <strong>promotion, product, price, etc.</strong>—will be suspended and resume on <span class="font-mono font-bold text-[#1B4332]">12 Nov 01:00 (HKT)</span>. Please ensure all necessary files for D11 are uploaded before <span class="font-mono font-bold text-[#7F2B00]">9 Nov 14:00 (HKT)</span>.',
+        c1_desc: 'All file loader jobs—including <strong>promotion, product, price, etc.</strong>—will be suspended and resume on <span class="font-mono font-bold text-[#005F66]">12 Nov 01:00 (HKT)</span>. Please ensure all necessary files for D11 are uploaded before <span class="font-mono font-bold text-[#007A73]">9 Nov 14:00 (HKT)</span>.',
         c1_list_title: 'Loader files include (Click to toggle status):',
         c1_list_count: '6/6 In-Progress',
         c1_foot: '<strong>Special Handling:</strong> If any files require import during the suspension period, please notify us in advance for special handling.',
-        c2_flavor: 'Strawberry Rose Track',
+        c2_flavor: 'Warehouse Traffic Control',
         c2_title: '2. “Notify Me” Email Suspension',
         c2_box_title: 'Email Trigger Pause Window',
         c2_box_tag: '25 Hours Lock',
         c2_pause_label: 'Paused On',
         c2_resume_label: 'Resumes On',
-        c2_desc: 'To avoid excessive warehouse requests, the <strong>“Notify Me” email trigger</strong> will be paused on <span class="font-mono font-bold text-[#800F2F]">11 Nov 00:00 (HKT)</span> and resume on <span class="font-mono font-bold text-[#1B4332]">12 Nov 01:00 (HKT)</span>.',
+        c2_desc: 'To avoid excessive warehouse requests, the <strong>“Notify Me” email trigger</strong> will be paused on <span class="font-mono font-bold text-[#005F66]">11 Nov 00:00 (HKT)</span> and resume on <span class="font-mono font-bold text-[#007A73]">12 Nov 01:00 (HKT)</span>.',
         c2_foot: 'Warehouse Request Protection',
-        c3_flavor: 'Lavender Taro Track',
+        c3_flavor: 'Cloud Infrastructure',
         c3_title: '3. Enlarged Server Capacity',
         c3_box_title: 'eStore Scaling Readiness',
         c3_box_sub: 'Scaled according to BU traffic forecast',
@@ -1166,7 +1148,7 @@
         c3_note: 'If there are any significant changes to the forecast, please update us promptly for further assessment.',
         c3_foot_left: 'Target: Throughout D11',
         c3_foot_right: 'BU Forecast Active',
-        c4_flavor: 'Sky Blueberry Track',
+        c4_flavor: 'Incident Response',
         c4_title: '4. Production Support',
         c4_desc: 'Please continue to report production issues via the existing channels:',
         c4_ch1_title: 'Working hours',
@@ -1177,10 +1159,10 @@
         c4_ch3_sub: 'Immediate escalation',
         c4_ch3_badge: 'Call via Teams',
         c4_foot: 'D11 Duty Roster',
-        c5_flavor: 'Peach Coral Track',
+        c5_flavor: 'Campaign Priority',
         c5_title: '5. Flash Sales Support',
         c5_ta_title: 'Provide Promotion IDs',
-        c5_ta_sub: 'By <strong class="font-mono underline">3 Nov</strong> at the latest',
+        c5_ta_sub: 'By <strong class="font-mono text-[#E61E2A] underline">3 Nov</strong> at the latest',
         c5_imp_title: 'Import & Verification Cutoff',
         c5_imp_sub: 'Share info & import before <strong class="font-mono">6 Nov</strong>',
         c5_list_title: 'Schedule & Checking Checklist:',
@@ -1274,11 +1256,11 @@ We will provide special support on Flash Sales during the D11 period. If BU has 
         kpi2_desc: '提供 Flash Sales 時程並完成促銷匯入',
         kpi2_foot: '供團隊事前驗證',
         kpi3_tag: '檔案上傳截止',
-        kpi3_date: '11月09日 <span class="text-sm">14:00</span>',
+        kpi3_date: '11月09日 <span class="text-sm text-[#007A73]">14:00</span>',
         kpi3_desc: '請於 16:00 HKT 排程暫停前完成上傳',
         kpi3_foot: '涵蓋 6 類 Loader 檔案',
         kpi4_tag: '雙11當日系統鎖定',
-        kpi4_date: '11月11日 <span class="text-sm">00:00</span>',
+        kpi4_date: '11月11日 <span class="text-sm text-[#007A73]">00:00</span>',
         kpi4_desc: '「貨到通知」暫停至 11/12 01:00 HKT',
         tl_subtitle: '依時間排序之執行路線圖 • JIRA#WTCTW-3783',
         tl_title: 'eLab 雙11 (D11) 關鍵時程與系統凍結時間表 (HKT)',
@@ -1301,33 +1283,33 @@ We will provide special support on Flash Sales during the D11 period. If BU has 
         tl6_title: '系統排程全面恢復',
         tl6_desc: 'File Loader 排程與「貨到通知我」郵件於 <strong>11月12日 01:00 (HKT)</strong> 恢復運作。',
         tl6_foot: '步驟 06 • 恢復正常營運',
-        filter_label: '馬卡龍分類篩選：',
+        filter_label: '專案分類篩選：',
         filter_all: '全部安排項目 (5)',
         filter_loader: '檔案排程 & 貨到通知 (2)',
         filter_infra: '伺服器擴充 & 支援 (2)',
         filter_flash: '限時搶購 & TA Team (1)',
         search_placeholder: '搜尋 IS21*, 11月3日, TA Team...',
         btn_reset: '全部重置為「進行中」',
-        c1_flavor: '開心果薄荷綠 • 項目 01',
+        c1_flavor: 'E2 資料同步控管 • 項目 01',
         c1_title: '1. 檔案載入排程暫停 (File Loader Suspension)',
         c1_box1_label: '排程暫停期間 (HKT)',
         c1_box1_sub: '於 11月12日 01:00 (HKT) 恢復運作',
         c1_box2_label: '必要檔案上傳截止時間',
         c1_box2_time: '11月9日 14:00 (HKT) 前',
         c1_box2_sub: '請提前上傳所有 D11 所需檔案',
-        c1_desc: '所有 File Loader 排程作業（包含<strong>促銷、商品、價格</strong>等）將暫停執行，並於 <span class="font-mono font-bold text-[#1B4332]">11月12日 01:00 (HKT)</span> 恢復。請確保所有 D11 必要檔案皆於 <span class="font-mono font-bold text-[#7F2B00]">11月9日 14:00 (HKT)</span> 前完成上傳。',
+        c1_desc: '所有 File Loader 排程作業（包含<strong>促銷、商品、價格</strong>等）將暫停執行，並於 <span class="font-mono font-bold text-[#005F66]">11月12日 01:00 (HKT)</span> 恢復。請確保所有 D11 必要檔案皆於 <span class="font-mono font-bold text-[#007A73]">11月9日 14:00 (HKT)</span> 前完成上傳。',
         c1_list_title: '受影響之 Loader 檔案清單（點擊可切換狀態）：',
         c1_list_count: '6/6 進行中',
         c1_foot: '<strong>特殊處理提醒：</strong>若有任何檔案必須於暫停期間匯入，請務必提前通知我們以進行專案特殊處理。',
-        c2_flavor: '草莓玫瑰粉 • 項目 02',
+        c2_flavor: '倉庫流量保護 • 項目 02',
         c2_title: '2. 「貨到通知我」郵件暫停 (“Notify Me” Suspension)',
         c2_box_title: '郵件觸發暫停時段',
         c2_box_tag: '鎖定 25 小時',
         c2_pause_label: '暫停開始時間',
         c2_resume_label: '恢復發送時間',
-        c2_desc: '為避免產生過量倉庫查詢請求，<strong>「貨到通知我 (Notify Me)」郵件觸發機制</strong>將於 <span class="font-mono font-bold text-[#800F2F]">11月11日 00:00 (HKT)</span> 暫停，並於 <span class="font-mono font-bold text-[#1B4332]">11月12日 01:00 (HKT)</span> 恢復。',
+        c2_desc: '為避免產生過量倉庫查詢請求，<strong>「貨到通知我 (Notify Me)」郵件觸發機制</strong>將於 <span class="font-mono font-bold text-[#005F66]">11月11日 00:00 (HKT)</span> 暫停，並於 <span class="font-mono font-bold text-[#007A73]">11月12日 01:00 (HKT)</span> 恢復。',
         c2_foot: '保護倉庫系統請求負載',
-        c3_flavor: '香芋薰衣草紫 • 項目 03',
+        c3_flavor: '雲端基礎架構 • 項目 03',
         c3_title: '3. 伺服器容量擴充 (Enlarged Server Capacity)',
         c3_box_title: 'eStore 擴充準備度',
         c3_box_sub: '依據 BU 提供之流量預估進行擴充',
@@ -1335,7 +1317,7 @@ We will provide special support on Flash Sales during the D11 period. If BU has 
         c3_note: '若流量預估有任何重大變動，請即時更新通知我們，以便進行進一步評估。',
         c3_foot_left: '目標：雙11全期穩定',
         c3_foot_right: 'BU 流量預估監控中',
-        c4_flavor: '藍莓天空藍 • 項目 04',
+        c4_flavor: '即時問題應變 • 項目 04',
         c4_title: '4. D11 期間正式環境支援 (Production Support)',
         c4_desc: '雙11期間請持續透過現有管道回報正式環境 (Production) 問題：',
         c4_ch1_title: '上班時間 (Working hours)',
@@ -1346,10 +1328,10 @@ We will provide special support on Flash Sales during the D11 period. If BU has 
         c4_ch3_sub: '重大異常請直接語音聯繫',
         c4_ch3_badge: '透過 Teams 直接通話',
         c4_foot: 'D11 專案值班表',
-        c5_flavor: '蜜桃珊瑚橘 • 項目 05',
+        c5_flavor: '活動優先專案 • 項目 05',
         c5_title: '5. 限時搶購特別支援 (Flash Sales Support)',
         c5_ta_title: '提供 Promotion ID',
-        c5_ta_sub: '最晚請於 <strong class="font-mono underline">11月3日</strong> 前提供',
+        c5_ta_sub: '最晚請於 <strong class="font-mono text-[#E61E2A] underline">11月3日</strong> 前提供',
         c5_imp_title: '促銷匯入與驗證截止',
         c5_imp_sub: '請於 <strong class="font-mono">11月6日</strong> 前分享資訊並匯入',
         c5_list_title: '限時搶購準備與檢查清單：',
@@ -1440,11 +1422,11 @@ Loader 檔案包含：
       const pillEn = document.getElementById('lang-pill-en');
       const pillZh = document.getElementById('lang-pill-zh');
       if (currentLang === 'en') {
-        pillEn.className = 'px-1.5 py-0.2 rounded bg-[#9D4EDD] text-white text-[11px] transition-all';
-        pillZh.className = 'px-1.5 py-0.2 rounded text-[#3C096C] text-[11px] transition-all';
+        pillEn.className = 'px-1.5 py-0.5 rounded bg-[#009990] text-white text-[11px] transition-all';
+        pillZh.className = 'px-1.5 py-0.5 rounded text-[#005F66] text-[11px] transition-all';
       } else {
-        pillEn.className = 'px-1.5 py-0.2 rounded text-[#3C096C] text-[11px] transition-all';
-        pillZh.className = 'px-1.5 py-0.2 rounded bg-[#9D4EDD] text-white text-[11px] transition-all';
+        pillEn.className = 'px-1.5 py-0.5 rounded text-[#005F66] text-[11px] transition-all';
+        pillZh.className = 'px-1.5 py-0.5 rounded bg-[#009990] text-white text-[11px] transition-all';
       }
 
       // Translate all elements with data-i18n attribute
@@ -1518,28 +1500,28 @@ Loader 檔案包含：
       const labelText = getLocalizedStatusText(status);
 
       if (status === 'In-Progress') {
-        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#FFF3B0] text-[#7F4F24] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer';
+        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F0FDFA] text-[#005F66] border border-[#009990]/40 shadow-sm hover:bg-[#CCFBF1]/60 transition-all cursor-pointer';
         btn.innerHTML = `
           <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#F4A261]"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E76F51]"></span>
+            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#009990]"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#007A73]"></span>
           </span>
           <span class="status-label">${labelText}</span>
         `;
       } else if (status === 'Completed') {
-        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#D8F3DC] text-[#1B4332] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer';
+        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-300 shadow-sm hover:bg-emerald-100 transition-all cursor-pointer';
         btn.innerHTML = `
           <span class="relative flex h-2.5 w-2.5">
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#52B788]"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
           </span>
           <span class="status-label">${labelText}</span>
         `;
       } else {
-        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#FFE5EC] text-[#800F2F] border-2 border-white shadow-sm hover:scale-105 transition-all cursor-pointer';
+        btn.className = 'status-pill group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FEF2F2] text-[#E61E2A] border border-[#E61E2A]/35 shadow-sm hover:bg-red-100 transition-all cursor-pointer';
         btn.innerHTML = `
           <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#FF8FAB]"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#800F2F]"></span>
+            <span class="animate-radar absolute inline-flex h-full w-full rounded-full bg-[#E61E2A]"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E61E2A]"></span>
           </span>
           <span class="status-label">${labelText}</span>
         `;
@@ -1556,11 +1538,11 @@ Loader 檔案包含：
       if (currentState === 'In-Progress') {
         el.setAttribute('data-state', 'Completed');
         badge.textContent = dict.status_completed_short;
-        badge.className = 'sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#D8F3DC] text-[#1B4332] border border-[#52B788]/50';
+        badge.className = 'sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-300';
       } else {
         el.setAttribute('data-state', 'In-Progress');
         badge.textContent = dict.status_in_progress_short;
-        badge.className = 'sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50';
+        badge.className = 'sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35';
       }
     }
 
@@ -1576,7 +1558,7 @@ Loader 檔案包含：
         const badge = item.querySelector('.sub-badge');
         if (badge) {
           badge.textContent = dict.status_in_progress_short;
-          badge.className = 'sub-badge font-mono text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#FFF3B0] text-[#7F4F24] border border-[#F4A261]/50';
+          badge.className = 'sub-badge font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F0FDFA] text-[#007A73] border border-[#009990]/35';
         }
       });
       updateMasterProgress();
@@ -1616,21 +1598,13 @@ Loader 檔案包含：
 
     // Filter cards by category
     function filterCards(category) {
-      const inactiveStyles = {
-        all: 'bg-slate-100 text-slate-700',
-        loader: 'bg-[#D8F3DC] text-[#1B4332]',
-        infra: 'bg-[#EDE0FE] text-[#3C096C]',
-        flash: 'bg-[#FFD8BE] text-[#7F2B00]'
-      };
-
       document.querySelectorAll('.filter-btn').forEach(btn => {
-        const cat = btn.id.replace('filter-', '');
-        btn.className = `filter-btn px-3.5 py-1.5 rounded-xl text-xs font-extrabold hover:opacity-90 transition-all ${inactiveStyles[cat] || 'bg-slate-100'}`;
+        btn.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F0FDFA] hover:bg-[#CCFBF1]/70 text-[#005F66] border border-[#009990]/25 transition-all';
       });
 
       const activeBtn = document.getElementById(`filter-${category}`);
       if (activeBtn) {
-        activeBtn.className = 'filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-[#9D4EDD] text-white shadow-sm transition-all';
+        activeBtn.className = 'filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#009990] text-white shadow-sm transition-all';
       }
 
       document.querySelectorAll('.arrangement-card').forEach(card => {
